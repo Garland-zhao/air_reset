@@ -1,0 +1,7 @@
+redis 为什么 hash 比 str 省空间
+
+使用redis set 的实战场景到底是如何实现的
+    https://www.cnblogs.com/haoprogrammer/p/11065461.html
+    1.标签（tag）,给用户添加标签，或者用户给消息添加标签，这样有同一标签或者类似标签的可以给推荐关注的事或者关注的人。
+    2.点赞，或点踩，收藏等，可以放到set中实现
+

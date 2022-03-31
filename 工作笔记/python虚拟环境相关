@@ -1,0 +1,22 @@
+1 使用virtualenv配置python虚拟环境
+
+    $ pip install virtualenv  # 安装命令
+
+    $ virtualenv env_name  # 创建虚拟环境
+
+    $ virtualenv -p python2.7 env_name  #解释器为python2.7
+
+    $ virtualenv -p python3.4 env_name #解释器为python3.4
+
+
+    $ virtualenv --system-site-packages env27  # 如果python已经安装了第三方库，你希望在新的虚拟环境中也使用这些库
+
+    $ virtualenv --no-site-packages env27  # 新的虚拟环境中不使用这些库
+
+    $ source env_name/bin/activate  # 启动虚拟环境
+
+    $ deactivate  # 退出虚拟环境
+
+
+    https://blog.csdn.net/a200822146085/article/details/89048172
+    https://www.cnblogs.com/students/p/10012650.html
