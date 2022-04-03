@@ -1,0 +1,36 @@
+# 从sql中读取结果
+df = pd.read_sql(sql, engine)
+
+# 重命名列名
+df = df.rename(columns={'fund_code': 'code', 'fund_abbr': 'name'})
+
+# 判断包含
+_df = df[df.code.str.contains(wd, regex=False)]
+
+# 判断为空
+if _df.empty:
+    print('Can not find data')
+
+# df转dict (eg:https://blog.csdn.net/weixin_39791387/article/details/87627235)
+data = df.to_dict(orient='records')
+
+
+# 按照某列排序
+df = df.sort_values('time')
+
+# 返回默认的列
+df = df[['nav', 'time']]
+
+# 使用where 替换NaN为None
+df = df.where(df.notnull(), None)
+
+# 格式化时间字段， %F表示"年-月-日"
+data = df.时间字段.strftime('%F')
+
+# 对指定列数据进行处理(eg:拼接股票代码后缀, 将时间字段格式化为str)
+foo = lambda x : '{}'.SH'.format(x)
+df['stock_code'] = df['stock_code'].apply(foo)
+df["report_date"] = df["report_date"].map(lambda x: x.strftime("%F"))
+
+#
+8.130.12.45  172.19.18.134
