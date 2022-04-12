@@ -20,3 +20,9 @@
 
     https://blog.csdn.net/a200822146085/article/details/89048172
     https://www.cnblogs.com/students/p/10012650.html
+
+2 使用python3 -m venv ./some_env
+
+    $ sudo apt install python3.8-venv
+
+    $ python -m venv ./zhaofan_env  # 创建虚拟环境
