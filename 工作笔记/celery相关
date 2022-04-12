@@ -1,0 +1,6 @@
+TODO
+1 初始化Celery 的 include参数
+
+2 $ celery -A XXX worker --loglevel=info 中XXX的加载顺序
+
+3

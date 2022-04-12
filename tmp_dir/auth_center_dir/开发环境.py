@@ -3,6 +3,7 @@ from pprint import pp
 import requests as req
 from base64 import b64encode
 
+
 # 开发环境
 # kc_uri = 'https://keycloak.deepredai.com'
 # realm = 'new_master_realm'
