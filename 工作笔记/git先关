@@ -1,8 +1,0 @@
-1 合并多个commit
-    假设当前共提交了5个commit
-        git rebase -i HEAD~5, 然后只留下第一个pick, 剩下的pick改为f, 保存
-
-        git push  -f  强制提交到远端, 覆盖掉原来的commit, 此时commit变为了一个
-
-
-

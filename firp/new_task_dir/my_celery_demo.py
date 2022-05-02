@@ -3,9 +3,11 @@ from celery import Celery
 # 初始化, 并使用RabbitMQ作为分发消息中间人
 app = Celery(
     'task_demo',
-    broker='amqp://guest@localhost//',
-    backend='redis://:V9Ncd3AWtnxVI8S@localhost:6379/0'
+    broker='amqp://root:PfFhtpwLDLzDjNg@192.168.2.9:50008//',
+    backend='redis://:ILWKzuytVjOfNv7@192.168.2.9:50006/6'
 )
+
+
 # app = Celery('hello', broker='redis://:V9Ncd3AWtnxVI8S@localhost:6379/0')  # 使用redis
 
 
@@ -13,6 +15,14 @@ app = Celery(
 @app.task
 def my_add(x, y):
     return x + y
+
+
+@app.task
+def add_new_similar_task(task):
+    compute_date = task['compute_date']
+    ticker = task['ticker']
+    size = task['size']
+    white_id = task['white_id']
 
 
 """
@@ -28,3 +38,8 @@ def my_add(x, y):
 Celery 的每个部分几乎都可以自定义扩展和单独使用，
 例如自定义连接池、序列化方式、压缩方式、日志记录方式、任务调度、生产者、消费者、中间人（Broker）等。
 """
+
+
+@app.task
+def add_new_similar_task(task_key):
+    compute_date = task_key
